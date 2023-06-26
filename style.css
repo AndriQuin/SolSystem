@@ -1,0 +1,283 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+
+#headline {
+	width: 50%;
+	float: left;
+	color: floralwhite;
+}
+
+#solarsystem {
+	width: 50%;
+	float: left;
+	height: 100%;
+	position: relative;
+}
+
+#headline #content {
+	margin: 6rem 5rem;
+	border-left: 1rem solid white;
+}
+
+#headline #content h1 {
+	font-size: 5rem;
+	margin-left: 3rem;
+	margin-bottom: 1rem;
+	text-indent: 5px;
+}
+
+#headline #content p {
+	text-indent: 10px;
+	margin-left: 3rem;
+}
+
+button {
+	padding: 1rem 1rem;
+	font-size: 12px;
+	color: white;
+	border: 1px solid white;
+	display: inline-block;
+	margin-left: 8rem;
+	background: transparent;
+	position: relative;
+}
+
+button:before {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: white;
+	transition: width 0.3s;
+	z-index: -1;
+}
+
+button:hover:before {
+	width: 100%;
+} 
+
+button:hover {
+	color: black;
+}
+
+#pagination {
+	margin-top: 8rem;
+	margin-left: 8rem;
+	display: inline-block;
+}
+
+#pagination a {
+	padding: 10px 10px;
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+}
+
+#pagination a:hover {
+	background: white;
+	color: black;
+}
+
+#pagination a#active {
+	background: white;
+	color: black;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	overflow-x: hidden;
+}
+
+#sun {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    width: 5rem;
+    height: 5rem;
+    border: 1 solid red;
+    background: yellow;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    outline: 1px solid white;
+    outline-offset: 1.5rem;
+}
+
+#mercury {
+    position: absolute;
+    z-index: 98;
+    top: calc(50% - 0.5rem);
+    left: calc(50% - 0.5rem);
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid black;
+    background: gray;
+    border-radius: 50%;
+    animation: orbitmercury 2s linear infinite;
+}
+
+#venus {
+    position: absolute;
+    z-index: 98;
+    top: calc(50% - 0.75rem);
+    left: calc(50% - 0.75rem);
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid orange;
+    background: red;
+    border-radius: 50%;
+    animation: orbitvenus 3.5s linear infinite;
+}
+
+#orbitv {
+	position: absolute;
+	z-index: 1;
+	width: 12rem;
+	height: 12rem;
+	background: transparent;
+	border: 1px solid white;
+	border-radius: 50%;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#earth {
+    position: absolute;
+    z-index: 98;
+    top: calc(50% - 1.25rem);
+    left: calc(50% - 1.25rem);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid white;
+    background: linear-gradient(270deg, skyblue, lime);
+    border-radius: 50%;
+    animation: orbitearth 5s linear infinite;
+}
+
+
+#orbite {
+	position: absolute;
+	z-index: 1;
+	width: 18rem;
+	height: 18rem;
+	background: transparent;
+	border: 1px solid white;
+	border-radius: 50%;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#mars {
+    position: absolute;
+    z-index: 98;
+    top: calc(50% - 1.1rem);
+    left: calc(50% - 1.1rem);
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1px solid orange;
+    border-radius: 50%;
+    animation: orbitmars 6s linear infinite;
+    background: red;
+}
+
+#orbitm {
+	position: absolute;
+	z-index: 1;
+	width: 32rem;
+	height: 32rem;
+	background: transparent;
+	border: 1px solid white;
+	border-radius: 50%;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@keyframes orbitmercury {
+	from {
+		transform:  rotate(0deg) translate(4rem) rotate(0deg);
+	}
+	to {
+
+		transform:   rotate(360deg) translate(4rem) rotate(0deg);
+	}
+}
+
+
+
+@keyframes orbitvenus {
+	from {
+		transform:  rotate(0deg) translate(6rem) rotate(0deg);
+	}
+	to {
+
+		transform:   rotate(360deg) translate(6rem) rotate(0deg);
+	}
+}
+
+@keyframes orbitearth {
+	from {
+		transform:  rotate(0deg) translate(9rem) rotate(0deg);
+	}
+	to {
+
+		transform:   rotate(360deg) translate(9rem) rotate(0deg);
+	}
+}
+
+@keyframes orbitmars {
+	from {
+		transform:  rotate(0deg) translate(16rem) rotate(0deg);
+	}
+	to {
+
+		transform:   rotate(360deg) translate(16rem) rotate(0deg);
+	}
+}
+
+@media screen and (max-width: 720px) {
+
+	body {
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+
+	#headline {
+		width: 100%;
+		margin: 5rem 0;
+	}	
+
+	#headline #content {
+		margin: 5rem 1rem;
+	}
+
+	#headline button {
+		margin: 1rem calc(50% - 3.5rem);
+		width: 7rem;
+	}
+
+	#headline #pagination {
+		margin: 2rem calc(50% - 40%);
+		padding: 0 auto;
+		width: 80%;
+		display: block;
+	}
+
+	#solarsystem {
+		width: 100%;
+		overflow: hidden;
+		margin-top: 10rem;
+	}
+}
